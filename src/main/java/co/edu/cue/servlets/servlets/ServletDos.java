@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 @WebServlet({"/reloj.json"})
-public class ServeltDos extends HttpServlet {
+public class ServletDos extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
             IOException {
         resp.setContentType("text/html;charset=UTF-8");

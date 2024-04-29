@@ -47,10 +47,10 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
             IOException {
-        ClientService service = new ClientServiceImpl();
+        ClientServiceImpl service = new ClientServiceImpl();
         List<ClientDTO> client = null;
         try {
-            client = service.listar();
+            client = service.list();
             ObjectMapper mapper = new ObjectMapper();
             String json = mapper.writeValueAsString(client);
             resp.setContentType("application/json");
