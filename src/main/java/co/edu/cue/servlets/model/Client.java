@@ -3,8 +3,6 @@ package co.edu.cue.servlets.model;
 import lombok.*;
 
 import java.io.Serializable;
-import java.util.Date;
-
 @Getter
 @Setter
 @AllArgsConstructor
