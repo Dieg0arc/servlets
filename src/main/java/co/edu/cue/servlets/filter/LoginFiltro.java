@@ -1,4 +1,4 @@
-package co.edu.cue.servlets.servlets;
+package co.edu.cue.servlets.filter;
 
 import co.edu.cue.servlets.services.LoginService;
 import co.edu.cue.servlets.services.impl.LoginServiceSessionImpl;
@@ -6,6 +6,7 @@ import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
 import java.util.Optional;
 
@@ -27,4 +28,3 @@ public class LoginFiltro implements Filter {
         }
     }
 }
-

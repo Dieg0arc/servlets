@@ -6,9 +6,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface ClientService {
-    List<ClientDTO> list()  throws SQLException;
 
-    List<ClientDTO> listar();
+   List<ClientDTO> list();
+
     ClientDTO byId(int id_number);
     void save(ClientDTO c);
     void delete(int id_number);

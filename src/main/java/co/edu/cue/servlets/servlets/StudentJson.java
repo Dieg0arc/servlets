@@ -1,5 +1,9 @@
 package co.edu.cue.servlets.servlets;
 
+import co.edu.cue.servlets.model.Client;
+import co.edu.cue.servlets.repositories.Repository;
+import co.edu.cue.servlets.services.ClientService;
+import co.edu.cue.servlets.services.impl.ClientServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletInputStream;
@@ -8,9 +12,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import co.edu.cue.servlets.mapping.dtos.ClientDTO;
-import co.edu.cue.servlets.model.Client;
-import co.edu.cue.servlets.services.ClientService;
-import co.edu.cue.servlets.services.impl.ClientServiceImpl;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -47,18 +48,10 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
             IOException {
-        ClientServiceImpl service = new ClientServiceImpl();
-        List<ClientDTO> client = null;
-        try {
-            client = service.list();
+            List<ClientDTO> client = service.list();
             ObjectMapper mapper = new ObjectMapper();
             String json = mapper.writeValueAsString(client);
             resp.setContentType("application/json");
             resp.getWriter().write(json);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-}
-}
-
-
+        }
 }

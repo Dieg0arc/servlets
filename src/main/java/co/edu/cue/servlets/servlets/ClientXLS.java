@@ -18,7 +18,7 @@ public class ClientXLS extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
             IOException {
-        List<ClientDTO> client = service.listar();
+        List<ClientDTO> client = service.list();
 
         resp.setContentType("text/html;charset=UTF-8");
         String servletPath = req.getServletPath();
